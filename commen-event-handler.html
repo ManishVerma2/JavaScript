@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtname" name="txtname"><br><br>
+    <input type="button" id="btnram" name="btnram" value="Ram" onclick="btnclick(this)">
+    <input type="button" id="btnram" name="btnmohan" value="Sham" onclick="btnclick(this)">
+    <input type="button" id="btnram" name="btnmohan" value="Mohan" onclick="btnclick(this)">
+
+    <script>
+        function btnclick(btn){
+
+            //alert(`Hello.. ${btn.value}`);
+            document.getElementById("txtname").value=`Hello ${btn.value}`;
+        }
+    </script>
+</body>
+</html>

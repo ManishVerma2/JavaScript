@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netprice</title>
+</head>
+<body>
+    <h2>MRP price graterthen 1000 = Dis price 10 % </h2>
+    <h2>MRP price lessthen 1000 = Dis price 5 % </h2>
+    <label for="mrp">MRP Rs. : </label>
+    <input type="text" name="mrp" id="mrp" placeholder="MRP Price"><br><br>
+    <input type="button" name="btn" id="btn" value="="><br><br>
+    <label for="dis">Discount Price : </label>
+    <input type="text" name="dis" id="dis" placeholder="Discount Price"><br><br>
+    <label for="net">Net Price : </label>
+    <input type="text" name="net" id="net" placeholder="Net Price">
+    <input type="button" name="resetbtn" id="resetbtn" value="Reset">    
+    <script>
+        var resultbtn=document.getElementById("btn");
+        resultbtn.addEventListener("click",()=>{
+            var mrp=document.getElementById("mrp").value;
+            if(mrp>=1000)
+            {
+                var dis=mrp*10/100;
+            }
+            else
+            {
+                dis=mrp*5/100;
+            }
+            var net=mrp-dis;
+
+            document.getElementById("dis").value=+dis;
+            document.getElementById("net").value=+net;
+        })
+        var resetbtn=document.getElementById("resetbtn");
+        resetbtn.addEventListener("click",()=>{
+            document.getElementById("mrp").value="";
+            document.getElementById("dis").value="";
+            document.getElementById("net").value="";
+        })
+    </script>
+</body>
+</html>

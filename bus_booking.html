@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus booking</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label for="child">Number of Child : </label>
+                <input type="text" name="child" id="child">
+            </td>
+            <td>
+                <label for="young">Number of Young : </label>
+                <input type="text" name="young" id="young">
+            </td>
+            <td>
+                <label for="old">Number of Old : </label>
+                <input type="text" name="old" id="old">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" name="ebtn" id="ebtn" value="total psanger">
+                <input type="text" name="total_psanger" id="total_psanger">
+                <h3 id="bus_book"></h3>
+            </td>
+        </tr>
+        <tr>
+            <table>
+                <tr>
+                    <th>Person</th>
+                    <th>Ordinary</th>
+                    <th>Semi Delux</th>
+                    <th>Dulex</th>
+                </tr>
+                <tr>
+                    <th>Child</th>
+                    <th>350</th>
+                    <th>450</th>
+                    <th>600</th>
+                </tr>
+                <tr>
+                    <th>Young</th>
+                    <th>450</th>
+                    <th>550</th>
+                    <th>700</th>
+                </tr>
+                <tr>
+                    <th>Old</th>
+                    <th>400</th>
+                    <th>500</th>
+                    <th>600</th>
+                </tr>
+            </table>
+        </tr>
+        <tr>
+            <td>
+                <h1>Enter type of bus :</h1>
+                <input type="button" name="" id="ordinary" value="Ordinary">
+                <input type="button" name="" id="semi_delux" value="Semi-Delux">
+                <input type="button" name="" id="delux" value="Delux Bus">
+            </td>
+        </tr><br><br>
+        <tr>
+            <td>
+                <label for="rchild">Total rupees of Child : </label>
+                <input type="text" name="rchild" id="rchild">
+            </td>
+            <td>
+                <label for="ryoung">Total rupees of Young : </label>
+                <input type="text" name="ryoung" id="ryoung">
+            </td>
+            <td>
+                <label for="rold">Total rupees of Old : </label>
+                <input type="text" name="rold" id="rold">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="total_rupees">Total Rupees : </label>
+                <input type="text" name="total_rupees" id="total_rupees">
+            </td>
+        </tr>
+    </table>
+    <script>
+        var child;
+        var young;
+        var old;
+        var total;
+        
+        var ebtn=document.getElementById("ebtn");
+        ebtn.addEventListener("click",()=>{
+             child=Number(document.getElementById("child").value);
+             young=Number(document.getElementById("young").value);
+             old=Number(document.getElementById("old").value);
+             total=child+young+old;  
+            document.getElementById("total_psanger").value=+total;
+            if(total>=35 && total<=60)
+            {
+                document.getElementById("bus_book").innerHTML="Bus was <mark>ready</mark> to booking"
+            }
+            else{
+                document.getElementById("bus_book").innerHTML="Bus was <mark>not ready</mark> to booking"
+            }
+        })
+
+        var ordinary=document.getElementById("ordinary");
+        ordinary.addEventListener("click",()=>{
+             child=Number(document.getElementById("child").value);
+             young=Number(document.getElementById("young").value);
+             old=Number(document.getElementById("old").value);
+             child*=350;
+             young*=450;
+             old*=400;
+             total=child+young+old;
+            document.getElementById("rchild").value=+child;
+            document.getElementById("ryoung").value=+young;
+            document.getElementById("rold").value=+old;
+            document.getElementById("total_rupees").value=+total;
+        })
+
+        var semi_delux=document.getElementById("semi_delux");
+        semi_delux.addEventListener("click",()=>{
+             child=Number(document.getElementById("child").value);
+             young=Number(document.getElementById("young").value);
+             old=Number(document.getElementById("old").value);
+             child*=450;
+             young*=550;
+             old*=500;
+             total=child+young+old;
+            document.getElementById("rchild").value=+child;
+            document.getElementById("ryoung").value=+young;
+            document.getElementById("rold").value=+old;
+            document.getElementById("total_rupees").value=+total;
+        })
+
+        var delux=document.getElementById("delux");
+        delux.addEventListener("click",()=>{
+             child=Number(document.getElementById("child").value);
+             young=Number(document.getElementById("young").value);
+             old=Number(document.getElementById("old").value);
+             child*=600;
+             young*=700;
+             old*=600;
+             total=child+young+old;
+            document.getElementById("rchild").value=+child;
+            document.getElementById("ryoung").value=+young;
+            document.getElementById("rold").value=+old;
+            document.getElementById("total_rupees").value=+total;
+        })
+    </script>
+</body>
+</html>

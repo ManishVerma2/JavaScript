@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While loop</title>
+</head>
+<body>
+    <script>
+        // unknown loop
+        // condition control
+        var num=parseInt(prompt("enter a number "));
+        var x=0;
+        var y=0;
+        var r=0;
+        while(num>0)
+        {
+            x=x+1;
+            y=y+num%10;
+            r=r*10+num%10;
+            num= parseInt(num/10);
+            
+        }
+        alert(`Total Digits in a number ${x}`);
+        alert(`Total of Digits of a number ${y}`);
+        alert(`Reverse of Digits of a number ${r}`);
+        /*
+        enter a number and print it in word
+        1234
+        One Two Three Four
+        enter a number and check is it arm strong or not 
+        153
+
+        1*1*1+3*3*3+5*5*5=153
+        1+27+125=153
+
+        */
+    </script>
+</body>
+</html>

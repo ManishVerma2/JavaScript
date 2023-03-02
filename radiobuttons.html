@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons Demo</title>
+    <script>
+        function btnOk_click()
+        {
+           var gender=document.getElementsByName("gender");
+           var male=gender[0];
+           var female=gender[1];
+           var name=document.getElementById("txtname").value;
+           if(male.checked==true)
+           {
+            alert(`Hello Mr ${name}`)
+           }
+           else if(female.checked==true)
+           {
+            alert(`Hello Ms ${name}`)
+           
+           }
+
+        }
+        function rbYesClick(rb)
+        {
+            if(rb.checked==true)
+            {
+                document.getElementById("txt2").value=document.getElementById("txt1").value;
+            }
+        }
+        function rbNoClick(rb)
+        {
+            if(rb.checked==true)
+            {
+                document.getElementById("txt2").value="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        Enter Your Name:
+        <input type="text" id="txtname" name="txtname"/>
+        Select your gender
+        <input type="radio" name="gender" id="rbmale" value="Male"/>Male |
+        <input type="radio" name="gender" id="rbfemale" value="FeMale"/> Female
+        <input type="button" value="Ok" id="btnOk" onclick="btnOk_click()"/>
+    </div>
+    <div>
+        <p>put your address</p>
+        <input type="text" id="txt1"/>
+        <p>is your below address same as above address</p>
+        <input type="radio" name="confirm" id="rbYes" onclick="rbYesClick(this)" value="Yes"/>Yes |
+        <input type="radio" name="confirm" id="rbNo" onclick="rbNoClick(this)" value="No"/> No
+        <p>put your 2nd address</p>
+        <input type="text" id="txt2"/>
+    </div>
+</body>
+</html>

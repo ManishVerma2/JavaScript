@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>W7 Calculator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        table{
+            border: 1px solid black;
+            margin: auto;
+            background-color: rgb(205, 235, 235);
+        }
+        .btn{
+            width: 45px;
+            height: 30px;
+            margin: 5px;
+            border-color:black ;
+            background-color:rgb(239, 247, 247);
+            color: black;
+            font-size: 15px;
+                text-align:center;
+        }
+        #txtscrn{
+            width: 250px;
+            height: 50px;
+            font-size: 25px;
+            margin: 14px 14px 5px 14px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align:end;
+            
+        }
+        #btn0{
+            width: 100px;
+        }
+        #btnequl{
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;"> Calculator</h2>
+
+        <table>
+            <tr>
+                <td colspan="6"><input type="text" name="txtscrn" id="txtscrn"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" id="btnmc" onclick="btnmc_Click()" value="MC"></td>
+                <td><input class="btn" type="button" id="btnmr" onclick="btnmr_Click()" value="MR"></td>
+                <td><input class="btn" type="button" id="btnms" onclick="btnms_Click()" value="MS"></td>
+                <td><input class="btn" type="button" id="btnmp" onclick="btnmp_Click()" value="M+"></td>
+                <td><input type="text" id="btnmm" style="width: 45px; height:30px; margin: 5px; text-align: center;" readonly></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" id="btnb" onclick="btnbackspace_click()" value="&#8592;"></td>
+                <td><input class="btn" type="button" id="btnce" onclick="btnce_Click()" value="CE"></td>
+                <td><input class="btn" type="button" id="btnc" onclick="btnc_Click()" value="C" style="background-color: red; color: white;"></td>
+                <td><input class="btn" type="button" id="btnpm" onclick="btnpm_click()" value="&#177;"></td>
+                <td><input class="btn" type="button" id="btn_sqrt" onclick="btn_sqrt()" value="&#8730;"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" id="btn7" onclick="btndigit_click(this)" value="7"></td>
+                <td><input class="btn" type="button" id="btn8" onclick="btndigit_click(this)" value="8"></td>
+                <td><input class="btn" type="button" id="btn9" onclick="btndigit_click(this)" value="9"></td>
+                <td><input class="btn" type="button" id="btndiv" onclick="btnop_click(this)" value="/"></td>
+                <td><input class="btn" type="button" id="btnper" onclick="btnper_Click()" value="%"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" id="btn4" onclick="btndigit_click(this)" value="4"></td>
+                <td><input class="btn" type="button" id="btn5" onclick="btndigit_click(this)" value="5"></td>
+                <td><input class="btn" type="button" id="btn6" onclick="btndigit_click(this)" value="6"></td>
+                <td><input class="btn" type="button" id="btnmul" onclick="btnop_click(this)" value="*"></td>
+                <td><input class="btn" type="button" id="btn1byx" value="1/x"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" id="btn1" onclick="btndigit_click(this)" value="1"></td>
+                <td><input class="btn" type="button" id="btn2" onclick="btndigit_click(this)" value="2"></td>
+                <td><input class="btn" type="button" id="btn3" onclick="btndigit_click(this)" value="3"></td>
+                <td><input class="btn" type="button" id="btnmin" onclick="btnop_click(this)" value="-"></td>
+                <td rowspan="2"><input class="btn" type="button" id="btnequl" onclick="btnequl_click()" value="="></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="btn" type="button" id="btn0" onclick="btndigit_click(this)" value="0"></td>
+                <td><input class="btn" type="button" id="btndot" onclick="btndot_Click()" value="."></td>
+                <td><input class="btn" type="button" id="btnplus" onclick="btnop_click(this)" value="+"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        var num1;
+        var num2;
+        var op;
+        var r;
+        var mem;
+        function btndigit_click(btn){ //0-9 digit print
+            document.getElementById("txtscrn").value=document.getElementById("txtscrn").value+btn.value;
+        }
+
+        function btnop_click(btn){
+            num1=Number(document.getElementById("txtscrn").value);
+            document.getElementById("txtscrn").value="";
+            op=btn.value;
+            console.log("num1"+ num1 +"op"+op);
+        }
+
+        function btnequl_click(){
+            num2=Number(document.getElementById("txtscrn").value);
+            if(op=="+")
+            {
+                r=num1+num2;
+            }
+            else if(op=="-")
+            {
+                r=num1-num2;
+            }
+            else if(op=="*")
+            {
+                r=num1*num2;
+            }
+            else if(op=="/")
+            {
+                r=num1/num2;
+            }
+            document.getElementById("txtscrn").value=r;
+        }
+
+        function btnbackspace_click(){
+            var str=document.getElementById("txtscrn").value;
+            var txtlen=str.length;
+            if(txtlen>0)
+            {
+            str=str.substr(0,txtlen-1);
+            document.getElementById("txtscrn").value=str;
+            }
+            else
+            {
+                alert("nothing to delete")
+            }
+        }
+
+        function btnc_Click(){
+            num1=0;
+            num2=0;
+            document.getElementById("txtscrn").value="";
+        }
+
+        function btnce_Click(){
+            num2=0;
+            document.getElementById("txtscrn").value="";
+        }
+
+        function btndot_Click(){
+            var str=document.getElementById("txtscrn").value;
+            if(str.indexOf(".")==-1)
+            {
+                document.getElementById("txtscrn").value+=".";
+            }
+        }
+
+        function btnper_Click(){
+            num2=Number(document.getElementById("txtscrn").value);
+            r=num1*num2/100;
+            document.getElementById("txtscrn").value=r;
+        }
+
+        function btnms_Click(){
+            mem=Number(document.getElementById("txtscrn").value);
+            document.getElementById("btnmm").value="M";
+        }
+        function btnmr_Click(){
+            document.getElementById("txtscrn").value=mem;
+        }
+        function btnmp_Click(){
+            mem+=Number(document.getElementById("txtscrn").value);
+        }
+        function btnmc_Click(){
+            mem=0;
+            document.getElementById("txtscrn").value="";
+            document.getElementById("btnmm").value="";
+        }
+        function btnpm_click()
+        {
+            num1=Number(document.getElementById("txtscrn").value);
+            r=num1*-1;
+            document.getElementById("txtscrn").value=r;
+        }
+        function btn_sqrt()
+        {
+            num1=Number(document.getElementById("txtscrn").value);
+            r=Math.sqrt(num1);
+            document.getElementById("txtscrn").value=r;
+        }
+    </script>
+</body>
+</html>

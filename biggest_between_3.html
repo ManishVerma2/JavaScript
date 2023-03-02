@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biggest between 3 number</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>first number : </th>
+            <td><input type="text" name="fnum" id="fnum"></td>
+        </tr>
+        <tr>
+            <th>second number : </th>
+            <td><input type="text" name="snum" id="snum"></td>
+        </tr>
+        <tr>
+            <th>third number : </th>
+            <td><input type="text" name="tnum" id="tnum"></td>
+        </tr>
+        <tr>
+            <th colspan="2"><input type="button" name="btn" id="btn" value="biggest number"></th>
+        </tr>
+        <tr>
+            <th colspan="3"><input type="text" name="result" id="result"></th>
+        </tr>
+    </table>
+    <script>
+        var result_btn=document.getElementById("btn");
+        result_btn.addEventListener("click",()=>{
+            var first=Number(document.getElementById("fnum").value);
+            var second=Number(document.getElementById("snum").value);
+            var third=Number(document.getElementById("tnum").value);
+            if(first>second && first>third)
+            {
+                document.getElementById("result").value="first number biggest "+first;
+            }
+            else if(second>first && second>third)
+            {
+                document.getElementById("result").value="second number biggest "+second;
+            }
+            else
+            {
+                document.getElementById("result").value="third number biggest "+third
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biggest number </title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Enter first number : </th>
+            <td><input type="text" name="txtf" id="txtf"></td>
+        </tr>
+        <tr>
+            <th>Enter second number : </th>
+            <td><input type="text" name="txts" id="txts"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="button" name="clickbtn" id="clickbtn" value="click me"></td>
+        </tr>
+        <tr>
+            <th colspan="2"><input type="text" name="result" id="result"></th>
+        </tr>
+    </table>
+    <script>
+        var resultbtn=document.getElementById("clickbtn");
+        resultbtn.addEventListener("click",()=>{
+            var first=Number(document.getElementById("txtf").value);
+            var second=Number(document.getElementById("txts").value);
+            if(first>second)
+            {
+                document.getElementById("result").value="first number is biggest";
+            }
+            else if(first==second)
+            {
+                document.getElementById("result").value="both number is quel";
+            }
+            else
+            {
+                document.getElementById("result").value="second number is biggest";
+            }
+        })
+    </script>
+</body>
+</html>

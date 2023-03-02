@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simpleintrest</title>
+</head>
+<body>
+    <label for="pre">Principle : </label> 
+    <input type="text" name="pre" id="pre" placeholder="Enter Principle"><br><br>
+    <label for="rate">Rate : </label>
+    <input type="text" name="rate" id="rate" placeholder="Enter Rate"><br><br>
+    <label for="time">Time : </label>
+    <input type="text" name="time" id="time" placeholder="Enter Time"><br><br>
+    <input type="button" name="btn" id="btn" value="="><br><br>
+    <label for="result">Result : </label>
+    <input type="text" name="result" id="result" placeholder="Result Screen">
+    <input type="reset" value="reset" id="rset">
+    <script>
+        var resultbtn=document.getElementById("btn");
+        resultbtn.addEventListener("click",()=>{
+            var p=document.getElementById("pre").value;
+            var r=document.getElementById("rate").value;
+            var t=document.getElementById("time").value;
+            var si=(p*r*t)/100;
+            document.getElementById("result").value=+si;
+        })
+        var resetbtn=document.getElementById("rset");
+        resetbtn.addEventListener("click",()=>{
+            document.getElementById("pre").value="";
+            document.getElementById("rate").value="";
+            document.getElementById("time").value="";
+            document.getElementById("result").value="";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sales price</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Enter The Sale Of Book : </th>
+            <td><input type="text" name="txtsale" id="txtsale"></td>
+        </tr>
+        <tr>
+            <th>Enter The Cost Of Book : </th>
+            <td><input type="text" name="txtcost" id="txtcost"></td>
+        </tr>
+        <tr>
+            <th colspan="2"><input type="button" name="btn" id="btn" value="click me to loss/profit"></th>
+        </tr>
+        <tr>
+            <th colspan="2"><input type="text" name="rscreen" id="rscreen"></th>
+        </tr>
+    </table>
+    <script>
+        var btn_click=document.getElementById("btn");
+        btn_click.addEventListener("click",()=>{
+            var sale=Number(document.getElementById("txtsale").value);
+            var cost=Number(document.getElementById("txtcost").value);
+            if(sale>cost)
+            {
+                var p=sale-cost;
+                document.getElementById("rscreen").value="profit "+p;
+            }
+            else if(sale==cost)
+            {
+                var e=sale==cost;
+                document.getElementById("rscreen").value="No profit No loss"+e;
+            }
+            else
+            {
+                var l=cost-sale;
+                document.getElementById("rscreen").value="loss "+l;
+            }
+        })
+    </script>
+</body>
+</html>

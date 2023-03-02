@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>address copy</title>
+</head>
+<body>
+    <div>
+        <label for="name">Enter your name : </label>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="gander">Enter your gander : </label>
+        <input type="radio" name="gander" id="male" value="male">Male
+        <input type="radio" name="gander" id="female" value="female"> Female <br><br>
+        <input type="button" name="resultbtn" id="resultbtn" value="Submit">
+        <h4 id="resulttxt"></h4>
+
+        <label for="txtnam">Enter you Address : </label>
+        <input type="text" name="txtnam" id="txtnam">
+        <h3> Is your below address same as above addresss </h3>
+        <input type="radio" name="check" id="btnok" value="Ok" onclick="okbtn_click(this)">Ok
+        <input type="radio" name="check" id="btcancle" value="Cancle" onclick="canclebtn_click(this)">Cancle <br><br>
+        <label for="resultbox">Enter curent address : </label>
+        <input type="text" name="resultbox" id="resultbox">
+    </div>
+    <script>
+        var resultbtn=document.getElementById("resultbtn");
+        resultbtn.addEventListener("click",()=>{
+            var gander=document.getElementsByName("gander")
+            var male=gander[0];
+            var female=gander[1];
+            var name=document.getElementById("name").value;
+            if(male.checked==true)
+            {
+                document.getElementById("resulttxt").innerHTML=`Hello...  Mr. ${name} pleace Enter your address`;
+            }
+            else if(female.checked==true)
+            {
+                document.getElementById("resulttxt").innerHTML=`Hello...  Ms. ${name} pleace Enter your address`;
+            }
+        })
+
+        function okbtn_click(ch){
+            if(ch.checked==true)
+            {
+                document.getElementById("resultbox").value=document.getElementById("txtnam").value;
+            }         
+        }
+         
+        function canclebtn_click(ch){
+            if(ch.checked==true)
+            {
+                document.getElementById("resultbox").value="";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working hours</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th><label for="work">Enter working hours : </label></th>
+            <th><input type="text" name="work" id="work"></th>
+            <th><input type="button" name="rbtn" id="rbtn" value="click me"></th>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: center;"><input type="text" name="result" id="result"></td>
+        </tr>
+    </table>
+
+    <script>
+    
+        var rbtn=document.getElementById("rbtn");
+        rbtn=addEventListener("click",()=>{
+
+        var hour=document.getElementById("work").value;
+        var p=250;
+
+        if(hour==8)
+        {
+            document.getElementById("result").value="pay of working hours is : "+p;
+        }
+        else if (hour>8 && hour<=10)
+        {
+            p=250;
+            for(var i = 9; i <= hour; i++)
+            {
+                p+= 50;
+            }
+            document.getElementById("result").value="pay of working hours is : "+p;
+            
+        }
+        else if (hour>10 && hour<=12)
+        {
+            p=350;
+            for(var i = 11; i <= hour; i++)
+            {
+                p+= 75;
+            }
+            document.getElementById("result").value="pay of working hours is : "+p;
+
+        }
+        else if (hour>12 && hour<=14)
+        {
+            p=500;
+            for(var i = 13; i <= hour; i++)
+            {
+                p+=100;
+            }
+            document.getElementById("result").value="pay of working hours is : "+p;
+            
+        }
+        else{
+            document.getElementById("result").value="invalid input";
+        }
+        })
+        
+    </script>
+</body>
+</html>

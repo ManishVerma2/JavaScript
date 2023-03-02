@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="row">Enter Number of Rows </label><input type="number" id="row">
+    <label for="cols">Enter Number of Columns </label><input type="number" id="cols">
+<button ondblclick="document.getElementById('rslt').innerHTML=table();">Print Table</button>    
+   <div id="rslt"></div>   
+    <script>
+        function table(){
+        var r=document.getElementById('row').value;
+        var c=document.getElementById('cols').value;
+         document.write("<table style='border:1px solid black; border-collapse:collapse'>");
+            
+    for(var i=0;i<r;i++)
+    {
+        
+            document.write("<tr>");
+            for(var j=0;j<c;j++)
+            {
+                
+                    document.write("<td style='border:1px solid black; padding: 5px'>");
+                        document.write("Hello");
+                        document.write("</td>");             
+            }
+            document.write("</tr>");
+    }
+    document.write("</table>");
+}
+
+    </script>
+</body>
+</html>

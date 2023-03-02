@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+</head>
+<body>
+    <h3>Enter your Hobby : </h3>
+    <input type="checkbox" name="study" id="study" value="studing"> Studing <br>
+    <input type="checkbox" name="play" id="play" value="playing"> Playing <br><br>
+    <input type="button" name="resultbtn" id="resultbtn" value="Submit"> <br><br>
+    
+    <div>
+        <label for="mainadd">Enter your Address : </label>
+        <input type="text" name="mainadd" id="mainadd">
+        <h4><input type="checkbox" name="chkadd" id="chkadd" onclick="chkadd_click()" >Is your current address is same as your permanent address :</h4>
+        <label for="currentadd">Current Address : </label>
+        <input type="text" name="currentadd" id="currentadd">
+    </div>
+
+
+    <script>
+        var resultb=document.getElementById("resultbtn");
+        resultb.addEventListener("click",()=>{
+            var study=document.getElementById("study");
+            var play=document.getElementById("play");
+            if(study.checked==true && play.checked==true)
+            {
+                alert("Excelent");
+            }
+            else if(study.checked==true)
+            {
+                alert("Very Good");
+            }
+            else if(play.checked==true)
+            {
+                alert("good");
+            }
+            else
+            {
+                alert("pleace select at least one hobby");
+            }
+        })
+
+        function chkadd_click(){
+            var chkadd=document.getElementById("chkadd");
+            if(chkadd.checked==true)
+            {
+                document.getElementById("currentadd").value=document.getElementById("mainadd").value;
+            }
+            else
+            {
+                document.getElementById("currentadd").value="";
+            }
+        }
+    </script>
+</body>
+</html>
