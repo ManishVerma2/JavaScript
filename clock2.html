@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background:linear-gradient(blue,yellow,red) no-repeat;
+            height: 100vh;
+        }
+        div{
+            max-width: 500px;
+            border: 5px inset;
+            margin: 10% auto;
+            text-align: center;
+            background-color: aqua;
+        }
+        div h2{
+            display: inline-block;
+            border-radius: 20px;
+            font-size: 50px;
+            font-weight: 600;
+            margin: 5px;
+            padding: 10px;
+            color: white;
+        }
+        #hour{
+            background-color:rgb(238, 20, 20);
+        }
+        #mint{
+            background-color: rgb(40, 207, 40);
+        }
+        #second{
+            background-color: rgb(230, 230, 23);
+        }
+        #mili{
+            background-color: rgb(194, 40, 224);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 id="hour"></h2>
+        <h2 id="mint"></h2>
+        <h2 id="second"></h2> 
+        <h2 id="mili"></h2> 
+    </div>
+    <script>
+        function time(){
+            var tym=new Date();
+            document.getElementById("hour").innerHTML=`${tym.getHours()}`;
+            document.getElementById("mint").innerHTML=`${tym.getMinutes()}`;
+            document.getElementById("second").innerHTML=`${tym.getSeconds()}`;
+            document.getElementById("mili").innerHTML=`${tym.getMilliseconds()}`;
+        }
+        setInterval(time,1000);
+    </script>
+</body>
+</html>

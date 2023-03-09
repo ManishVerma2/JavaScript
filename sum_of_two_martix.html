@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of two mattrix</title>
+</head>
+<body>
+    <script>
+        var a=new Array(3);
+        var b=new Array(3);
+        var c=new Array(3);
+        for(var i=0;i<3;i++)
+        {
+            a[i]=new Array(3);
+            b[i]=new Array(3);
+            c[i]=new Array(3);
+        }
+        a[0][0]=Number(prompt("a[0][0]"));
+        a[0][1]=Number(prompt("a[0][1]"));
+        a[0][2]=Number(prompt("a[0][2]"));
+
+        a[1][0]=Number(prompt("a[1][0]"));
+        a[1][1]=Number(prompt("a[1][1]"));
+        a[1][2]=Number(prompt("a[1][2]"));
+
+        a[2][0]=Number(prompt("a[2][0]"));
+        a[2][1]=Number(prompt("a[2][1]"));
+        a[2][2]=Number(prompt("a[2][2]"));
+
+        b[0][0]=Number(prompt("b[0][0]"));
+        b[0][1]=Number(prompt("b[0][1]"));
+        b[0][2]=Number(prompt("b[0][2]"));
+
+        b[1][0]=Number(prompt("b[1][0]"));
+        b[1][1]=Number(prompt("b[1][1]"));
+        b[1][2]=Number(prompt("b[1][2]"));
+
+        b[2][0]=Number(prompt("b[2][0]"));
+        b[2][1]=Number(prompt("b[2][1]"));
+        b[2][2]=Number(prompt("b[2][2]"));
+
+        c[0][0]=a[0][0]*b[0][0];
+        c[0][1]=a[0][1]*b[0][1];
+        c[0][2]=a[0][2]*b[0][2];
+
+        c[1][0]=a[1][0]*b[1][0];
+        c[1][1]=a[1][1]*b[1][1];
+        c[1][2]=a[1][2]*b[1][2];
+
+        c[2][0]=a[2][0]*b[2][0];
+        c[2][1]=a[2][1]*b[2][1];
+        c[2][2]=a[2][2]*b[2][2];
+
+        document.write("1st matrix is :  <br>")
+
+        for(var i=0;i<3;i++)
+        {
+            for(var j=0;j<3;j++)
+            {
+                document.write(a[i][j] +"&emsp;");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br> 2nd matrix is : <br>");
+
+        for(var i=0;i<3;i++)
+        {
+            for(var j=0;j<3;j++)
+            {
+                document.write(b[i][j] +"&emsp;");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br> Sum of two matrix is : <br>");
+
+        for(var i=0;i<3;i++)
+        {
+            for(var j=0;j<3;j++)
+            {
+                document.write(c[i][j] +"&emsp;");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

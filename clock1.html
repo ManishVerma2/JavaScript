@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <title>Date</title>
+    <style>
+        .ot{
+            max-width: 550px;
+            border: 5px inset yellowgreen;
+            margin: 10% auto;
+        }
+        #ctime{
+            text-align: center;
+            font-family:'Rampart One', cursive;;
+            font-size: 50px;
+            font-weight: 500;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ot">
+        <p id="ctime"></p>
+    </div>
+     <script>
+        function time(){
+            var today=new Date();
+            document.getElementById("ctime").innerHTML=(`${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}:${today.getMilliseconds()}`);
+        }
+            setInterval(time,1000);
+     </script>
+</body>
+</html>
