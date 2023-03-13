@@ -27,12 +27,23 @@
     <div class="ot">
         <p id="ctime"></p>
     </div>
+    <div style="width: 200px; margin: auto;">
+        <button onclick="start()">Start clock</button>
+        <button onclick="stop()">Stop clock</button>
+    </div>
      <script>
+        var int   //intervalid 
         function time(){
             var today=new Date();
             document.getElementById("ctime").innerHTML=(`${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}:${today.getMilliseconds()}`);
         }
-            setInterval(time,1000);
+        time();
+        function start(){
+            int=setInterval(time,1000);
+        }
+        function stop(){
+            clearInterval(int);
+        }
      </script>
 </body>
 </html>
