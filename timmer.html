@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+</head>
+<body>
+    <input type="text" id="txt" placeholder="0"><br><br>
+    <button onclick="timer()">Start time</button>
+    <button onclick="stop()">Stop time</button>
+    <script>
+        var x;
+
+        function timer(){
+            var a=document.getElementById("txt");
+            var b=Number(a.value);
+            b=b-1;  //b=b+1  incrag time 
+            if(b==0)    //b==10
+            {
+                a.value="done";
+                return;
+            }
+            else
+            {
+                a.value=b;
+            }
+            x=setTimeout(function(){timer("txt")},1000);
+        }
+        function stop(){
+            clearInterval(x);
+        }
+    </script>
+</body>
+</html>

@@ -4,24 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+        body{
+            background-image: url(bus.jpg);
+            background-size:cover;
+            background-repeat: no-repeat;
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 50px;
+            color: black;
+        }
+        .d1{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .mar{
+            margin-right: 20px;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #ebtn{
+            margin-right: 110px;
+        }
+        input{
+            color: black;
+        }
+    </style>
     <title>Bus booking</title>
 </head>
 <body>
+    <h1 class="heading">BUS Booking</h1>
     <table>
         <tr>
             <td>
-                <label for="child">Number of Child : </label>
+                <div class="d1">
+                <label for="child" class="mar">Number of Child : </label>
                 <input type="text" name="child" id="child">
-            </td>
-            <td>
-                <label for="young">Number of Young : </label>
-                <input type="text" name="young" id="young">
-            </td>
-            <td>
-                <label for="old">Number of Old : </label>
-                <input type="text" name="old" id="old">
+                </div>
             </td>
         </tr>
+        <tr>
+            <td>
+                <div class="d1">
+                <label for="young" class="mar">Number of Young : </label>
+                <input type="text" name="young" id="young">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d1">
+                <label for="old" class="mar">Number of Old : </label>
+                <input type="text" name="old" id="old">
+                </div>
+            </td>
         <tr>
             <td>
                 <input type="button" name="ebtn" id="ebtn" value="total psanger">
@@ -30,7 +75,8 @@
             </td>
         </tr>
         <tr>
-            <table>
+            <td>
+            <table class="table">
                 <tr>
                     <th>Person</th>
                     <th>Ordinary</th>
@@ -55,35 +101,48 @@
                     <th>500</th>
                     <th>600</th>
                 </tr>
+            </td>
             </table>
         </tr>
         <tr>
             <td>
-                <h1>Enter type of bus :</h1>
+                <h1 class="heading">Enter type of bus </h1>
                 <input type="button" name="" id="ordinary" value="Ordinary">
                 <input type="button" name="" id="semi_delux" value="Semi-Delux">
                 <input type="button" name="" id="delux" value="Delux Bus">
             </td>
-        </tr><br><br>
+        </tr>
         <tr>
             <td>
-                <label for="rchild">Total rupees of Child : </label>
+                <div class="d1">
+                <label for="rchild" class="mar">Total rupees of Child : </label>
                 <input type="text" name="rchild" id="rchild">
-            </td>
-            <td>
-                <label for="ryoung">Total rupees of Young : </label>
-                <input type="text" name="ryoung" id="ryoung">
-            </td>
-            <td>
-                <label for="rold">Total rupees of Old : </label>
-                <input type="text" name="rold" id="rold">
+                </div>
             </td>
         </tr>
         <tr>
             <td>
-                <label for="total_rupees">Total Rupees : </label>
+                <div class="d1">
+                <label for="ryoung" class="mar">Total rupees of Young : </label>
+                <input type="text" name="ryoung" id="ryoung">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d1">
+                <label for="rold" class="mar">Total rupees of Old : </label>
+                <input type="text" name="rold" id="rold">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <div class="d1">
+            <td>
+                <label for="total_rupees"class="mar" style="margin-right: 100px;">Total Rupees : </label>
                 <input type="text" name="total_rupees" id="total_rupees">
             </td>
+            </div>
         </tr>
     </table>
     <script>
