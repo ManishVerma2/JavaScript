@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+    <input type="button" value="hover me" id="btn" onmouseover="this.style.background='red'" onmouseout="this.style.background='white'">
+    <input type="button" value="hover me" id="button" onmouseover="mouseover()" onmouseout="mouseout()">
+    <input type="submit" value="submit" id="submitbtn" onclick="return confirmbutton()">
+    <script>
+        function mouseover(){
+            var a=document.getElementById("button");
+            a.style.background='green';
+            a.style.color='white';
+        }
+
+        function mouseout(){
+            var a=document.getElementById("button");
+            a.style.background='white';
+            a.style.color='black';
+        }
+
+        function confirmbutton(){
+            if(confirm("Are you sure you want to submit"))
+            {
+                alert("You select ok");
+                return true
+            }
+            else
+            {
+                alert("Yor select cancle");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

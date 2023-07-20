@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+</head>
+<body>
+    <img id="img" src="image/1.jpg" alt="mountain image 1" width="100%" height="500px">
+
+    <!-- <div id="log"></div> -->
+    <!-- <input type="button" value="start" onclick="start()">
+    <input type="button" value="stop" onclick="stop()"> -->
+    
+    <script>
+        var x;
+        // function start(){
+        //     x=setInterval(slider,1000);
+        // }
+        // function stop(){
+        //     clearInterval(x);
+        // }
+        function slider(){
+            var imgsrc=document.getElementById("img").getAttribute("src");
+            var fi=imgsrc.lastIndexOf("/")+1;
+            var li=imgsrc.lastIndexOf("/")+2;
+            var currentimg=imgsrc.substring(fi,li);
+            
+            // document.getElementById("log").innerHTML+="<br>" + imgsrc + "img no :-" + currentimg;
+            if(currentimg==5)
+            {
+                currentimg=0;
+            }
+            document.getElementById("img").setAttribute("src","image/"+(Number(currentimg)+1)+".jpg");
+        }
+        setInterval(slider,1000);
+
+    </script>
+</body>
+</html>

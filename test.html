@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 300px; height: 300px; border: 1px solid red;" id="div"> <h1>Hello....</h1></div>
+
+    <input type="button" onclick="red()" value="red">
+    <input type="button" onclick="yellow()" value="yellow">
+    <input type="button" onclick="reset()" value="reset">
+
+    <script>
+        function red(){
+            document.getElementById("div").style.background="red";
+        }
+        function yellow(){
+            document.getElementById("div").style.background="yellow";
+        }
+        function reset(){
+            document.getElementById("div").style.background="";
+            document.getElementById("div").innerHTML="";
+        }
+    </script>
+</body>
+</html>

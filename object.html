@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    <script>
+        document.write("<h2>Constructor object function</h2>s")
+        function Employee(fname,lname)
+        {
+            this.firstname=fname;
+            this.lastname=lname;
+            this.fullname=function(){
+            return this.firstname + " " + this.lastname
+            }
+        }
+        var employee=new Employee("manish","kumar")
+        document.write("First Name : " +employee.firstname+"<br>");
+        document.write("Last Name : "+employee.lastname +"<br>");
+        document.write("Full Name : "+employee.fullname() +"<br><br>");
+
+        document.write("<h2>literal notation object function</h2>")
+        var student={
+            first_name:"monu",
+            last_name:"verma",
+            fullname:function(){
+                return this.first_name + " " + this.last_name;
+            }
+        }
+        document.write("First Name : " +student.first_name + "<br>");
+        document.write("Last Name : " +student.last_name + "<br>");
+        document.write("Full Name : " +student.fullname() + "<br>");
+    </script>
+</body>
+</html>

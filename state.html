@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>state</title>
+</head>
+<body>
+    <h2 id="output"></h2>
+    <script>
+        var district=prompt("Enter your district : ");
+
+        var state=new Map();
+        state.set("Haryana",[
+            {"Sirsa":["Sirsa","Dabwali","Rania","Allenabad"]},
+            {"Fatehabad":["Fatehabad","Tohana","Ratia","Bhattu Kalan","Bhuna","Kullan","Jakhal"]},
+        ]);
+
+        var d=state.get("Haryana");
+
+        if(district=="Sirsa")
+        {
+            document.getElementById("output").innerHTML=d[0].Sirsa;
+        }
+        else if(district=="Fatehabad")
+        {
+            document.getElementById("output").innerHTML=d[1].Fatehabad;
+        }
+    </script>
+</body>
+</html>
